@@ -6,9 +6,9 @@ const CalculatingBoard = () => {
     const [cals, setCals] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/getCalculation')
+        axios.get('http://127.0.0.1:8000/api/getDashboard')
             .then(response => {
-                setCals(response.calculations);
+                setCals(response.data.calculating);
             })
             .catch(error => {
                 console.error('Error fetching calculations', error);
@@ -17,7 +17,7 @@ const CalculatingBoard = () => {
 
     return (
         <div className="stat">
-            <h3>Calculations: {cals.calculated}</h3>
+            <h3>Calculations: {cals}</h3>
         </div>
     )
 }
