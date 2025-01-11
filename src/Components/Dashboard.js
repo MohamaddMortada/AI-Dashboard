@@ -38,6 +38,9 @@ return (
         <div className="stat">
           <h3>Detecting: {stats.detecting}</h3>
         </div>
+        <div className="stat">
+          <h3>Predicting: {stats.predicting}</h3>
+        </div>
       </div>
 
       <div className="users">
