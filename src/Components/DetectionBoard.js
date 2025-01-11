@@ -6,9 +6,9 @@ const DetectionBoard = () => {
     const [dets, setDets] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/getDetection')
+        axios.get('http://127.0.0.1:8000/api/getDashboard')
             .then(response => {
-                setDets(response.detection);
+                setDets(response.data.detecting);
             })
             .catch(error => {
                 console.error('Error fetching Detection', error);
@@ -17,7 +17,7 @@ const DetectionBoard = () => {
 
     return (
         <div className="stat">
-            <h3>Detection: {dets.Detection}</h3>
+            <h3>Detection: {dets}</h3>
         </div>
     )
 }
