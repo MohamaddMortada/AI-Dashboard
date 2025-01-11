@@ -6,9 +6,9 @@ const FinishBoard = () => {
     const [fins, setFins] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/getFinish')
+        axios.get('http://127.0.0.1:8000/api/getDashboard')
             .then(response => {
-                setFins(response.photofinish);
+                setFins(response.data.photo_finish);
             })
             .catch(error => {
                 console.error('Error fetching Photo Finish', error);
