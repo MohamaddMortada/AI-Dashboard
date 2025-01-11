@@ -6,9 +6,9 @@ const ResultBoard = () => {
     const [ress, setRess] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/getResult')
+        axios.get('http://127.0.0.1:8000/api/getDashboard')
             .then(response => {
-                setRess(response.result);
+                setRess(response.data.added_results);
             })
             .catch(error => {
                 console.error('Error fetching Results', error);
