@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../axios';
 import UserCard from './UserCard';
-
+import '../Stylings/Dashboard.css'; 
 const Dashboard = () => {
     const [users, setUsers] = useState([]);
     const [stats, setStats] = useState({
