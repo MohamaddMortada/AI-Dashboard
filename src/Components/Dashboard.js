@@ -34,6 +34,11 @@ const Dashboard = () => {
 return (
     <div className="dashboard">
       <h1>AI Dashboard</h1>
+      <div className="stats">
+        <div className="stat">
+          <h3>Detecting: {stats.detecting}</h3>
+        </div>
+      </div>
 
       <div className="users">
         <h2>Users</h2>
