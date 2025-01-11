@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../axios';
 import UserCard from './UserCard';
 import '../Stylings/Dashboard.css'; 
+import UsersBoard from './Users';
 const Dashboard = () => {
     const [users, setUsers] = useState([]);
     const [stats, setStats] = useState({
@@ -14,9 +15,9 @@ const Dashboard = () => {
     });
   
     useEffect(() => {
-      axios.get('/users')
+      axios.get('http://127.0.0.1:8000/api/users')
         .then(response => {
-          setUsers(response.data); 
+          setUsers(response.data.users); 
         })
         .catch(error => {
           console.error('Error fetching user data', error);
@@ -55,18 +56,7 @@ return (
         </div>
       </div>
 
-      <div className="users">
-        <h2>Users</h2>
-        {users.map(user => (
-          <UserCard
-            key={user.id}
-            username={user.username}
-            email={user.email}
-            event={user.event}
-            pb={user.pb}
-          />
-        ))}
-      </div>
+    <UsersBoard/>
       
     </div>
 )
