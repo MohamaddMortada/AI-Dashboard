@@ -6,9 +6,9 @@ const ChatBotBoard = () => {
     const [bots, setBots] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/getChatBot')
+        axios.get('http://127.0.0.1:8000/api/getDashboard')
             .then(response => {
-                setBots(response.chatbot);
+                setBots(response.data.chatbot);
             })
             .catch(error => {
                 console.error('Error fetching ChatBot', error);
@@ -17,7 +17,7 @@ const ChatBotBoard = () => {
 
     return (
         <div className="stat">
-            <h3>ChatBot: {bots.chatbot}</h3>
+            <h3>ChatBot: {bots}</h3>
         </div>
     )
 }
