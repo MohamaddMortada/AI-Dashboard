@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../axios';
-import UserCard from './UserCard';
 import '../Stylings/Dashboard.css';
 
 const PredictionBoard = () => {
     const [preds, setPreds] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/getPredicted')
+        axios.get('http://127.0.0.1:8000/api/getDashboard')
             .then(response => {
-                setPreds(response.data.users);
+                setPreds(response.data.predictions);
             })
             .catch(error => {
                 console.error('Error fetching user data', error);
@@ -18,7 +17,7 @@ const PredictionBoard = () => {
 
     return (
         <div className="stat">
-            <h3>Predictions: {preds.predictions}</h3>
+            <h3>Predictions: {preds}</h3>
         </div>
     )
 }
