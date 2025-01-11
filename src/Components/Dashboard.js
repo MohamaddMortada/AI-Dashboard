@@ -41,6 +41,9 @@ return (
         <div className="stat">
           <h3>Predicting: {stats.predicting}</h3>
         </div>
+        <div className="stat">
+          <h3>Chatbot: {stats.chatbot}</h3>
+        </div>
       </div>
 
       <div className="users">
