@@ -3,6 +3,11 @@ import axios from '../axios';
 import UserCard from './UserCard';
 import '../Stylings/Dashboard.css'; 
 import UsersBoard from './Users';
+import DetectionBoard from './DetectionBoard';
+import PredictionBoard from './PredictionBoard';
+import CalculatingBoard from './CalculationBoard';
+import ChatBotBoard from './ChatbotBoard';
+import ResultBoard from './ResultsBoard';
 const Dashboard = () => {
     const [users, setUsers] = useState([]);
     const [stats, setStats] = useState({
@@ -36,27 +41,14 @@ return (
     <div className="dashboard">
       <h1>AI Dashboard</h1>
       <div className="stats">
-        <div className="stat">
-          <h3>Detecting: {stats.detecting}</h3>
+        <DetectionBoard/>
+        <PredictionBoard/>
+        <CalculatingBoard/>
+        <ChatBotBoard/>
+        <ResultBoard/>
         </div>
-        <div className="stat">
-          <h3>Predicting: {stats.predicting}</h3>
-        </div>
-        <div className="stat">
-          <h3>Chatbot: {stats.chatbot}</h3>
-        </div>
-        <div className="stat">
-          <h3>Calculating: {stats.calculating}</h3>
-        </div>
-        <div className="stat">
-          <h3>Photo Finish: {stats.photoFinish}</h3>
-        </div>
-        <div className="stat">
-          <h3>Adding Results: {stats.addingResults}</h3>
-        </div>
-      </div>
 
-    <UsersBoard/>
+        <UsersBoard/>
       
     </div>
 )

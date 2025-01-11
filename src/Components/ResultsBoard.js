@@ -17,7 +17,7 @@ const ResultBoard = () => {
 
     return (
         <div className="stat">
-            <h3>ChatBot: {bots}</h3>
+            <h3>Results: {ress}</h3>
         </div>
     )
 }
