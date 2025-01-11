@@ -34,6 +34,19 @@ const Dashboard = () => {
 return (
     <div className="dashboard">
       <h1>AI Dashboard</h1>
+
+      <div className="users">
+        <h2>Users</h2>
+        {users.map(user => (
+          <UserCard
+            key={user.id}
+            username={user.username}
+            email={user.email}
+            event={user.event}
+            pb={user.pb}
+          />
+        ))}
+      </div>
       
     </div>
 )
