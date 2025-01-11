@@ -21,7 +21,15 @@ const Dashboard = () => {
         .catch(error => {
           console.error('Error fetching user data', error);
         });
-        
+
+        axios.get('/stats')
+      .then(response => {
+        setStats(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching stats data', error);
+      });
+
     }, []);
 return (
     <div className="dashboard">
