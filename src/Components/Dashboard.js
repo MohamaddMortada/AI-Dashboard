@@ -47,6 +47,9 @@ return (
         <div className="stat">
           <h3>Calculating: {stats.calculating}</h3>
         </div>
+        <div className="stat">
+          <h3>Photo Finish: {stats.photoFinish}</h3>
+        </div>
       </div>
 
       <div className="users">
